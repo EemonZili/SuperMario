@@ -77,5 +77,8 @@
     <ClInclude Include="platform.h">
       <Filter>头文件\Block</Filter>
     </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>头文件\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,12 +1,11 @@
 #pragma once
 
 #include "scene.h"
-#include "main_menu.h"
-#include "game_scene.h"
 #include "camera.h"
 
 extern Scene* main_menu;
 extern Scene* game_scene;
+extern Scene* game_over_scene;
 
 class Scene_manager
 {
@@ -14,7 +13,8 @@ public:
 	enum class Scene_type //·½±ã³¡¾°ÇÐ»»
 	{
 		Menu,
-		Game
+		Game,
+		Over
 	};
 
 public:
@@ -37,6 +37,9 @@ public:
 			break;
 		case Scene_type::Game:
 			current_scene = game_scene;
+			break;
+		case Scene_type::Over:
+			current_scene = game_over_scene;
 			break;
 		default:
 			break;

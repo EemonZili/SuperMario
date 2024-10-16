@@ -134,6 +134,7 @@
     <ClInclude Include="atlas.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="fireball.h" />
+    <ClInclude Include="game_over.h" />
     <ClInclude Include="game_scene.h" />
     <ClInclude Include="main_menu.h" />
     <ClInclude Include="constants.h" />

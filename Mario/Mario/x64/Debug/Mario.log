@@ -1,8 +1,11 @@
 ﻿  main.cpp
-C:\Users\32098\source\repos\Mario\Mario\vector2.h(57,14): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+C:\Users\32098\Desktop\Mario\Mario\Mario\vector2.h(57,14): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
   (编译源文件“main.cpp”)
   
-C:\Users\32098\source\repos\Mario\Mario\atlas.h(33,23): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\32098\Desktop\Mario\Mario\Mario\atlas.h(33,23): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
   (编译源文件“main.cpp”)
   
-  Mario.vcxproj -> C:\Users\32098\source\repos\Mario\x64\Debug\Mario.exe
+C:\Users\32098\Desktop\Mario\Mario\Mario\mario_child.h(289,10): warning C4244: “return”: 从“const float”转换到“int”，可能丢失数据
+  (编译源文件“main.cpp”)
+  
+  Mario.vcxproj -> C:\Users\32098\Desktop\Mario\Mario\x64\Debug\Mario.exe

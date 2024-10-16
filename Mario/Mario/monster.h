@@ -3,11 +3,14 @@
 #include "wall.h"
 #include "fireball.h"
 #include "animation.h"
+#include "util.h"
 
 extern bool is_debug;
 
 extern std::vector<Wall> walls;//墙数组
 extern std::vector<Fireball*> fireballs; 
+
+extern IMAGE chestnut_dead;
 
 class Monster
 {
@@ -47,14 +50,18 @@ public:
 
 	void on_update(int delta)
 	{
-		animation.on_update(delta);
-		collision();
-		position += speed;
+		if (!is_dead)
+		{
+			animation.on_update(delta);
+			position += speed;
+			collision();
+		}
 	}
 
 	void on_draw(const Camera& camera)
 	{
-		animation.on_draw(position, camera);
+		if (is_dead) putimage_alpha(camera, (int)position.x, (int)position.y, &chestnut_dead);
+		else animation.on_draw(position, camera);
 		
 		if (is_debug)
 		{
@@ -94,6 +101,24 @@ public:
 			&& this->position.x + this->size.x / 2 <= position.x + size.x
 			&& this->position.y + this->size.y / 2 >= position.y
 			&& this->position.y + this->size.y / 2 <= position.y + size.y);
+	}
+	
+	bool is_up(const Vector2& position, const Vector2& size)//判断马里奥是否踩在怪物上方
+	{
+		return (this->position.y >= position.y)
+			&& (this->position.y <= position.y + size.y)
+			&& (max(position.x + size.x, this->position.x + this->size.x) - min(position.x, this->position.x) <= size.x + this->size.x);
+
+	}
+
+	void set_dead(bool is_dead)
+	{
+		this->is_dead = is_dead;
+	}
+
+	void get_status()
+	{
+		printf("is_dead: %d\n", is_dead);
 	}
 
 private:

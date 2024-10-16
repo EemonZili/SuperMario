@@ -1,6 +1,5 @@
 #pragma once
 
-#include "scene.h"
 #include "scene_manager.h"
 
 #include "atlas.h"
@@ -26,12 +25,18 @@ extern std::vector<Wall> walls;
 extern std::vector<Fireball*> fireballs;
 extern std::vector<Monster> chestnuts;
 
+extern Scene_manager* scene_manager;
+extern Camera main_camera;//Ö÷ÉãÏñ»ú
+
 class Game_scene : public Scene
 {
 public:
 	void on_enter() override
 	{
+		mciSendString(_T("open res/audio/ground.mp3 alias bgm_game"), NULL, 0, NULL);
 		mciSendString(_T("play bgm_game repeat from 0"), NULL, 0, NULL);
+
+		player1 = new Mario_child();
 
 		platforms.resize(4);
 		platforms[0].set(0, 2800, 525);
@@ -58,6 +63,21 @@ public:
 		chestnuts[0].set_x(1320);
 		chestnuts[0].set_size(Vector2(40, 40));
 		chestnuts[0].set_speed(Vector2(0.5f, 0));
+
+		dead_over_timer.set_wait_time(3000);
+		dead_over_timer.set_one_shot(false);
+		dead_over_timer.set_callback([&]()
+			{
+				dead_count++;
+				bgm_end = true;
+				scene_manager->switch_scene(Scene_manager::Scene_type::Game);
+			});
+
+		game_over_timer.set_wait_time(6000);
+		game_over_timer.set_one_shot(true);
+		game_over_timer.set_callback([&]()
+			{
+			});
 	}
 
 	void on_input(const ExMessage& msg) override
@@ -71,21 +91,21 @@ public:
 		default:
 			break;
 		}
-		player1.on_input(msg);
+		player1->on_input(msg);
 	}
 
 	void on_update(int delta, Camera& camera) override
 	{
-		player1.on_update(delta, camera);
+		player1->on_update(delta, camera);
 
-		//fireballs.erase(std::remove_if(
-		//	fireballs.begin(), fireballs.end(),
-		//	[](Fireball* fireball)
-		//	{
-		//		bool deletable = fireball->check_delete();
-		//		if (deletable) delete fireball;
-		//		return deletable;
-		//	}), fireballs.end());
+		fireballs.erase(std::remove_if(
+			fireballs.begin(), fireballs.end(),
+			[](Fireball* fireball)
+			{
+				bool deletable = fireball->check_delete();
+				if (deletable) delete fireball;
+				return deletable;
+			}), fireballs.end());
 
 		for (Fireball* fireball : fireballs)
 		{
@@ -96,13 +116,30 @@ public:
 		{
 			chestnut.on_update(delta);
 		}
+
+		if (player1->get_dead_status())
+		{
+			if (bgm_end)
+			{
+				mciSendString(_T("close bgm_game"), NULL, 0, NULL);
+				mciSendString(_T("play death from 0"), NULL, 0, NULL);
+				bgm_end = false;
+			}
+			dead_over_timer.on_update(delta);
+			if (dead_count == player1->get_life())
+			{
+				dead_count = 0;
+				mciSendString(_T("close bgm_game"), NULL, 0, NULL);
+				scene_manager->switch_scene(Scene_manager::Scene_type::Over);
+			}
+		}
 	}
 
 	void on_draw(const Camera& camera) override
 	{
 		putimage(camera, 0, 0, &bg);
 
-		player1.on_draw(camera);
+		player1->on_draw(camera);
 
 		for (Fireball* fireball : fireballs)
 		{
@@ -131,9 +168,22 @@ public:
 
 	void on_exit() override
 	{
-		mciSendString(_T("close bgm_game"), NULL, 0, NULL);
+		main_camera.reset();
+		walls.clear();
+		platforms.clear();
+		chestnuts.clear();
+		fireballs.clear();
+		delete player1;
+		player1 = nullptr;
+		dead_over_timer.reset();
+		game_over_timer.reset();
 	}
 
 private:
-	Mario_child player1;
+	Mario_child* player1;
+	Timer dead_over_timer;
+	Timer game_over_timer;
+	bool bgm_end = true;
+	bool game_over = false;
+	int dead_count = 0;
 };

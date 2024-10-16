@@ -3,6 +3,7 @@
 #include "player.h"
 #include "animation.h"
 #include "fireball.h"
+#include "monster.h"
 
 extern IMAGE mario_child_stand_left;//马路小孩站立图
 extern IMAGE mario_child_turn_left;//马里奥小孩转身图
@@ -52,43 +53,44 @@ public:
 	
 	void on_input(const ExMessage& msg)
 	{
-		switch (msg.message)
-		{
-		case WM_KEYDOWN:
-			switch (msg.vkcode)
+		if (!is_dead)
+			switch (msg.message)
 			{
-			case 0x41://'A'
-				is_left = true;
-				break;
-			case 0x44://'D'
-				is_right = true;
-				break;
-			case 0x57://'W'
-				if (can_jump)
-					on_jump();
-				break;
-			case 0x4B://'K'
-				if (can_attack)
+			case WM_KEYDOWN:
+				switch (msg.vkcode)
 				{
-					on_attack();
-					can_attack = false;
-					timer_attack_cd.reset();
+				case 0x41://'A'
+					is_left = true;
+					break;
+				case 0x44://'D'
+					is_right = true;
+					break;
+				case 0x57://'W'
+					if (can_jump)
+						on_jump();
+					break;
+				case 0x4B://'K'
+					if (can_attack)
+					{
+						on_attack();
+						can_attack = false;
+						timer_attack_cd.reset();
+					}
+					break;
+				}
+				break;
+			case WM_KEYUP:
+				switch (msg.vkcode)
+				{
+				case 0x41:
+					is_left = false;
+					break;
+				case 0x44:
+					is_right = false;
+					break;
 				}
 				break;
 			}
-			break;
-		case WM_KEYUP:
-			switch (msg.vkcode)
-			{
-			case 0x41:
-				is_left = false;
-				break;
-			case 0x44:
-				is_right = false;
-				break;
-			}
-			break;
-		}
 	}
 
 	//有很大的问题,需要完善
@@ -104,31 +106,33 @@ public:
 
 	void on_update(int delta, Camera& camera)
 	{
-		int direction = is_right - is_left;
-		if (direction != 0)
-		{
-			is_face_right = direction > 0;
-			if (is_face_right)
-				walk_right.on_update(delta);
-			else
-				walk_left.on_update(delta);
+		if (is_dead) move_and_collide(delta);
+		else {
+			int direction = is_right - is_left;
+			if (direction != 0)
+			{
+				is_face_right = direction > 0;
+				if (is_face_right)
+					walk_right.on_update(delta);
+				else
+					walk_left.on_update(delta);
 
-			float distance = direction * speed * delta;
-			on_run(distance);
-		}
-		camera.set_position(position);
-		timer_attack_cd.on_update(delta);
+				float distance = direction * speed * delta;
+				on_run(distance);
+			}
+			camera.set_position(position);
+			timer_attack_cd.on_update(delta);
 
-		move_and_collide(delta);
-		
-		//控制跳跃高度
-		if (position.y == 485)
-		{
-			can_jump = true;
-			jump_bgm = true;
+			move_and_collide(delta);
+
+			//控制跳跃高度
+			if (position.y == 485)
+			{
+				can_jump = true;
+				jump_bgm = true;
+			}
+			else if (position.y <= 390)	can_jump = false;
 		}
-		else if (position.y <= 390)	can_jump = false;
-		
 	}
 
 	void on_draw(const Camera& camera)
@@ -142,7 +146,7 @@ public:
 
 
 		int direction = is_right - is_left;
-		if (is_dead)//加载死亡图片
+		if (is_dead)
 		{
 			putimage_alpha(camera, (int)position.x, (int)position.y, &mario_child_dead);
 		}
@@ -168,11 +172,6 @@ public:
 			else
 				putimage_alpha(camera, (int)position.x, (int)position.y, &mario_child_stand_left);
 		}
-		//加载结束动画重新开始
-		if (is_dead && position.y >= 600)
-		{
-
-		}
 
 	}
 
@@ -181,7 +180,10 @@ public:
 		if (delta > 100) return; //防止初始加载时delta过大，导致角色穿过地面
 		velocity.y += gravity * delta;
 		position += velocity * (float)delta;
-		if (velocity.y > 0)
+
+		if (is_dead) return;
+
+		if (velocity.y > 0)//单向平台碰撞
 		{
 			for (const Platform& platform : platforms)//检测角色与地面碰撞
 			{
@@ -202,41 +204,55 @@ public:
 					}
 				}
 			}
-			for (const Wall& wall : walls)//检测角色与墙碰撞
-			{
-				const Wall::CollisionShape& shape = wall.shape;
-				bool is_collide_y = (max(position.y + size.y, shape.bottom) - min(position.y, shape.top) <= size.y + (shape.bottom - shape.top));
-				bool is_collide_x = (shape.x >= position.x && shape.x <= position.x + size.x);
+		}
+		for (const Wall& wall : walls)//检测角色与墙碰撞
+		{
+			const Wall::CollisionShape& shape = wall.shape;
+			bool is_collide_y = (max(position.y + size.y, shape.bottom) - min(position.y, shape.top) <= size.y + (shape.bottom - shape.top));
+			bool is_collide_x = (shape.x >= position.x && shape.x <= position.x + size.x);
 
-				if (is_collide_x && is_collide_y)
-				{
-					if (is_face_right) position.x = shape.x - size.x;
-					else position.x = shape.x;
-				}
-			}
-
-			for (Fireball* fireball : fireballs)
+			if (is_collide_x && is_collide_y)
 			{
-				if (fireball->check_collision(position, size))
-				{
-					fireball->set_delete(true);
-					is_dead = true;
-					break;
-				}
-			}
-
-			for (Monster chestnut : chestnuts)
-			{
-				if ()
+				if (is_face_right) position.x = shape.x - size.x;
+				else position.x = shape.x;
 			}
 		}
+
+		for (Fireball* fireball : fireballs)
+		{
+			if (fireball->check_collision(position, size))
+			{
+				fireball->set_delete(true);
+				is_dead = true;
+				velocity.y = -1.0f;
+				velocity.x = 0;
+				break;
+			}
+		}
+
+		for (Monster chestnut : chestnuts)
+		{
+			if (velocity.y > 0 && chestnut.is_up(position, size))
+			{
+				chestnut.set_dead(true);
+				velocity.y = -0.5f;
+			}
+			else if (chestnut.check_collision(position, size))
+			{
+				is_dead = true;
+				velocity.y = -1.0f;
+				velocity.x = 0;
+				break;
+			}
+		}
+
 		if (position.y >= 600)
 		{
 			position.y = 600;
 			is_dead = true;
-			velocity.y = -1.0f;
 		}
 	}
+
 
 	void on_run(float distance)
 	{
@@ -263,10 +279,21 @@ public:
 		fireballs.push_back(fireball);
 	}
 
+	bool get_dead_status()
+	{
+		return is_dead;
+	}
+
+	int get_life()
+	{
+		return life;
+	}
+
 private:
 	const float speed = 0.3f;
 	const float gravity = 1.6e-3f;
 	const float jump_speed = 0.1f;
+	const float life = 3; //生命
 	Animation walk_left;
 	Animation walk_right;
 

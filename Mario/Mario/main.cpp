@@ -14,6 +14,7 @@
 #include "scene.h"//场景类
 #include "main_menu.h"//主菜单类
 #include "game_scene.h"//游戏场景类
+#include "game_over.h" //游戏结束场景类
 #include "scene_manager.h"//场景管理类
 
 #include "monster.h"
@@ -22,6 +23,8 @@
 
 IMAGE bg;//主菜单背景图
 IMAGE title;//主菜单标题
+
+IMAGE game_over; //游戏结束图
 
 IMAGE mario_child_stand_left;//马路小孩站立图
 IMAGE mario_child_turn_left;//马里奥小孩转身图
@@ -35,11 +38,13 @@ IMAGE mario_child_dead;//马里奥小孩死亡图
 
 Atlas fireball;//火球动画
 
+IMAGE chestnut_dead;//栗子怪死亡图
 Atlas chestnut;//栗子怪动画
 
 Scene_manager* scene_manager;//场景管理器
 Scene* main_menu;//主菜单场景
 Scene* game_scene;//游戏场景
+Scene* game_over_scene;//游戏结束场景
 
 Camera main_camera;//主摄像机
 
@@ -49,6 +54,8 @@ std::vector<Fireball*> fireballs; //子弹数组，声明为全局变量，方便碰撞检测
 std::vector<Monster> chestnuts;//栗子怪数组
 
 bool is_debug = false;//用于可视化检查碰撞对象
+
+//int dead_count = 0;//死亡计数
 
 void load_res();//加载资源
 
@@ -64,6 +71,7 @@ int main()
 
 	main_menu = new Main_menu();
 	game_scene = new Game_scene();
+	game_over_scene = new Game_over();
 	scene_manager = new Scene_manager();
 	scene_manager->set_scene(main_menu);
 
@@ -100,11 +108,15 @@ void load_res()
 
 	loadimage(&bg, _T("res/image/main_menu/bg.png"));
 	loadimage(&title, _T("res/image/main_menu/title.png"));
+
+	//loadimage(&game_over, _T("res/image/game_over.png"));
 	
 	loadimage(&mario_child_stand_right, _T("res/image/entity/mario/0/child0.png"));
 	loadimage(&mario_child_turn_right, _T("res/image/entity/mario/0/child4.png"));
 	loadimage(&mario_child_jum_right, _T("res/image/entity/mario/0/child5.png"));
 	loadimage(&mario_child_dead, _T("res/image/entity/mario/0/child6.png"));
+
+	loadimage(&chestnut_dead, _T("res/image/entity/monster/ground/chestnut2.png"));
 
 	flip_image(&mario_child_stand_right, &mario_child_stand_left);
 	flip_image(&mario_child_turn_right, &mario_child_turn_left);
@@ -117,7 +129,8 @@ void load_res()
 
 	fireball.load_from_file(_T("res/image/entity/fireball/fireball%i.png"), 4, 0);
 
-	mciSendString(_T("open res/audio/ground.mp3 alias bgm_game"), NULL, 0, NULL);
 	mciSendString(_T("open res/audio/fireball.mp3 alias fireball"), NULL, 0, NULL);
 	mciSendString(_T("open res/audio/small_jump.mp3 alias small_jump"), NULL, 0, NULL);
+	mciSendString(_T("open res/audio/death.mp3 alias death"), NULL, 0, NULL);
+	mciSendString(_T("open res/audio/game_over.mp3 alias game_over"), NULL, 0, NULL);
 }
