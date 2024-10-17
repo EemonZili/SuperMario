@@ -14,6 +14,7 @@ public:
 		this->atlas = atlas;
 	}
 
+
 	void set_interval(int interval)
 	{
 		this->interval = interval;

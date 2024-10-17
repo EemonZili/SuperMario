@@ -20,12 +20,30 @@ public:
 		position.y = 485; //这是地面上的位置，怪物默认生成在地面上
 		animation.set_interval(500);
 		animation.set_loop(true);
+
+		dead_over_timer.set_wait_time(500);
+		dead_over_timer.set_one_shot(true);
+		dead_over_timer.set_callback([&]()
+			{
+				is_dead = true;
+			});
+		fly_over_timer.set_wait_time(1000);
+		fly_over_timer.set_one_shot(true);
+		fly_over_timer.set_callback([&]()
+			{
+				is_dead = true;
+			});
 	}
 	~Monster() = default;
 
 	void set_atlas(Atlas* atlas)
 	{
 		this->animation.set_atlas(atlas);
+	}
+
+	void set_fly_atlas(Atlas* atlas)
+	{
+		this->fly_animation.set_atlas(atlas);
 	}
 
 	void set_position(const Vector2& pos)
@@ -50,7 +68,14 @@ public:
 
 	void on_update(int delta)
 	{
-		if (!is_dead)
+		if (begin_time) dead_over_timer.on_update(delta);
+		else if (is_fly)
+		{
+			move(delta);
+			fly_over_timer.on_update(delta);
+			fly_animation.on_update(delta);
+		}
+		else
 		{
 			animation.on_update(delta);
 			position += speed;
@@ -60,7 +85,8 @@ public:
 
 	void on_draw(const Camera& camera)
 	{
-		if (is_dead) putimage_alpha(camera, (int)position.x, (int)position.y, &chestnut_dead);
+		if (begin_time) putimage_alpha(camera, (int)position.x, (int)position.y, &chestnut_dead);
+		else if (is_fly) fly_animation.on_draw(position, camera);
 		else animation.on_draw(position, camera);
 		
 		if (is_debug)
@@ -88,8 +114,11 @@ public:
 		{
 			if (fireball->check_collision(position, size))
 			{
+				is_fly = true;
+				Vector2 last_hurt_direction = fireball->get_position() - position;
+				speed.x = last_hurt_direction.x < 0 ? 0.35f : -0.35f;
+				speed.y = -1.0f;
 				fireball->set_delete(true);
-				is_dead = true;
 				break;
 			}
 		}
@@ -111,21 +140,33 @@ public:
 
 	}
 
-	void set_dead(bool is_dead)
+	void set_begin(bool begin)
 	{
-		this->is_dead = is_dead;
+		this->begin_time = begin;
 	}
 
-	void get_status()
+	bool check_dead()
 	{
-		printf("is_dead: %d\n", is_dead);
+		return is_dead;
+	}
+
+	void move(int delta)
+	{
+		speed.y += GRAVITY * delta;
+		position += speed * (float)delta;
 	}
 
 private:
 	Animation animation;
+	Animation fly_animation;
 	Vector2 position;
 	Vector2 speed;
 	Vector2 size;
 
+	Timer dead_over_timer;
+	Timer fly_over_timer;
 	bool is_dead = false;
+	bool is_fly = false;
+	bool begin_time = false; //是否被踩
+
 };

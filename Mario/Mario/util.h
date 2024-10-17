@@ -54,6 +54,24 @@ inline void flip_image(IMAGE* src, IMAGE* dst) //水平翻转图片
 	}
 }
 
+inline void vert_flip_image(IMAGE* src, IMAGE* dst) //垂直翻转图片
+{
+	int w = src->getwidth();
+	int h = src->getheight();
+	Resize(dst, w, h);
+	DWORD* src_buf = GetImageBuffer(src);
+	DWORD* dst_buf = GetImageBuffer(dst);
+	for (int y = 0; y < h; y++)
+	{
+		for (int x = 0; x < w; x++)
+		{
+			int idx_src = y * w + x;
+			int idx_dst = (h - 1 - y) * w + x;
+			dst_buf[idx_dst] = src_buf[idx_src];
+		}
+	}
+}
+
 inline void flip_atlas(Atlas& src, Atlas& dst) //水平翻转图集
 {
 	dst.clear();
@@ -61,6 +79,17 @@ inline void flip_atlas(Atlas& src, Atlas& dst) //水平翻转图集
 	{
 		IMAGE img_flpipped;
 		flip_image(src.get_image(i), &img_flpipped);
+		dst.add_image(img_flpipped);
+	}
+}
+
+inline void vert_flip_atlas(Atlas& src, Atlas& dst) //垂直翻转图集
+{
+	dst.clear();
+	for (int i = 0; i < src.get_size(); i++)
+	{
+		IMAGE img_flpipped;
+		vert_flip_image(src.get_image(i), &img_flpipped);
 		dst.add_image(img_flpipped);
 	}
 }

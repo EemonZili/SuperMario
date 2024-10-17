@@ -40,6 +40,7 @@ Atlas fireball;//火球动画
 
 IMAGE chestnut_dead;//栗子怪死亡图
 Atlas chestnut;//栗子怪动画
+Atlas chestnut_fly;//栗子怪被火球击中飞出动画 
 
 Scene_manager* scene_manager;//场景管理器
 Scene* main_menu;//主菜单场景
@@ -126,6 +127,7 @@ void load_res()
 	flip_atlas(mario_child_walk_right, mario_child_walk_left);
 
 	chestnut.load_from_file(_T("res/image/entity/monster/ground/chestnut%i.png"), 2, 0);
+	vert_flip_atlas(chestnut, chestnut_fly);
 
 	fireball.load_from_file(_T("res/image/entity/fireball/fireball%i.png"), 4, 0);
 

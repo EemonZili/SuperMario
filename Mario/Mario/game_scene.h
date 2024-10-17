@@ -19,6 +19,7 @@ extern IMAGE mario_child_jum;
 extern IMAGE mario_child_dead;
 extern Atlas mario_child_walk;
 extern Atlas chestnut;
+extern Atlas chestnut_fly;
 
 extern std::vector<Platform> platforms;
 extern std::vector<Wall> walls;
@@ -60,6 +61,7 @@ public:
 
 		chestnuts.resize(1);
 		chestnuts[0].set_atlas(&chestnut);
+		chestnuts[0].set_fly_atlas(&chestnut_fly);
 		chestnuts[0].set_x(1320);
 		chestnuts[0].set_size(Vector2(40, 40));
 		chestnuts[0].set_speed(Vector2(0.5f, 0));
@@ -106,6 +108,17 @@ public:
 				if (deletable) delete fireball;
 				return deletable;
 			}), fireballs.end());
+
+		//如果monster类有非静态const，这段代码会报错
+		for (auto it = chestnuts.begin(); it != chestnuts.end(); ) {
+			if (it->check_dead()) { 
+				it = chestnuts.erase(it);
+			}
+			else {
+				++it;
+			}
+		}
+
 
 		for (Fireball* fireball : fireballs)
 		{

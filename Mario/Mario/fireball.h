@@ -125,6 +125,11 @@ public:
 		this->callback = callback;
 	}
 
+	Vector2 get_position()
+	{
+		return position;
+	}
+
 private:
 	Vector2 size;
 	Vector2 speed;

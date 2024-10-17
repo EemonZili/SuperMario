@@ -19,6 +19,9 @@
     <Filter Include="头文件\Block">
       <UniqueIdentifier>{00d4d9ff-83ae-42b0-ae82-48180f9790f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\util">
+      <UniqueIdentifier>{8a3dcec2-878a-492c-bc00-9f2d2491a2f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,16 +29,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vector2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="constants.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="main_menu.h">
@@ -49,15 +43,6 @@
     </ClInclude>
     <ClInclude Include="scene.h">
       <Filter>头文件\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="atlas.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="animation.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="mario_child.h">
       <Filter>头文件</Filter>
@@ -79,6 +64,27 @@
     </ClInclude>
     <ClInclude Include="game_over.h">
       <Filter>头文件\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="atlas.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="brick.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

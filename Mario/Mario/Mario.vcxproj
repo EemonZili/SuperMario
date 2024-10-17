@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="atlas.h" />
+    <ClInclude Include="brick.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="fireball.h" />
     <ClInclude Include="game_over.h" />

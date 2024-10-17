@@ -178,7 +178,7 @@ public:
 	void move_and_collide(int delta)
 	{
 		if (delta > 100) return; //防止初始加载时delta过大，导致角色穿过地面
-		velocity.y += gravity * delta;
+		velocity.y += GRAVITY * delta;
 		position += velocity * (float)delta;
 
 		if (is_dead) return;
@@ -230,11 +230,11 @@ public:
 			}
 		}
 
-		for (Monster chestnut : chestnuts)
+		for (Monster& chestnut : chestnuts)
 		{
 			if (velocity.y > 0 && chestnut.is_up(position, size))
 			{
-				chestnut.set_dead(true);
+				chestnut.set_begin(true);
 				velocity.y = -0.5f;
 			}
 			else if (chestnut.check_collision(position, size))
@@ -291,7 +291,7 @@ public:
 
 private:
 	const float speed = 0.3f;
-	const float gravity = 1.6e-3f;
+	//const float gravity = 1.6e-3f;
 	const float jump_speed = 0.1f;
 	const float life = 3; //生命
 	Animation walk_left;

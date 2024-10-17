@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\brick.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\brick.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\game_scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\mario_child.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\mario_child.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\game_scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\monster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\constants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\constants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene_manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,48 +39,40 @@
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_over.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\game_over.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\main_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\main_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_over.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\game_over.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\fireball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\fireball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\platform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\platform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\platform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AAEFCCF3-EDC1-45EB-9CD4-F36C9CE4250E}|Mario\\Mario.vcxproj|solutionrelative:Mario\\platform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,11 +82,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "brick.h",
+              "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\brick.h",
+              "RelativeDocumentMoniker": "Mario\\brick.h",
+              "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\brick.h",
+              "RelativeToolTip": "Mario\\brick.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-17T03:21:07.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "constants.h",
+              "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\constants.h",
+              "RelativeDocumentMoniker": "Mario\\constants.h",
+              "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\constants.h",
+              "RelativeToolTip": "Mario\\constants.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-17T03:12:00.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "game_over.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_over.h",
               "RelativeDocumentMoniker": "Mario\\game_over.h",
@@ -91,19 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "animation.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\animation.h",
               "RelativeDocumentMoniker": "Mario\\animation.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\animation.h",
               "RelativeToolTip": "Mario\\animation.h",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwBoAAAAPAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T09:34:59.387Z"
+              "WhenOpened": "2024-10-15T09:34:59.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "wall.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\wall.h",
               "RelativeDocumentMoniker": "Mario\\wall.h",
@@ -111,37 +146,38 @@
               "RelativeToolTip": "Mario\\wall.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAYwB4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-15T08:03:04.653Z"
+              "WhenOpened": "2024-10-15T08:03:04.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "monster.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\monster.h",
               "RelativeDocumentMoniker": "Mario\\monster.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\monster.h",
               "RelativeToolTip": "Mario\\monster.h",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAA4AAAANAAAA",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAuwJoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-15T01:48:15.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\main.cpp",
               "RelativeDocumentMoniker": "Mario\\main.cpp",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\main.cpp",
               "RelativeToolTip": "Mario\\main.cpp",
-              "ViewState": "AQIAABwAAAAAAAAAAAAwwCgAAAATAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAAIEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-13T01:10:54.405Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "timer.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\timer.h",
               "RelativeDocumentMoniker": "Mario\\timer.h",
@@ -154,19 +190,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "fireball.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\fireball.h",
               "RelativeDocumentMoniker": "Mario\\fireball.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\fireball.h",
               "RelativeToolTip": "Mario\\fireball.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAFoAAAAEAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAAAIEAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T08:24:03.213Z"
+              "WhenOpened": "2024-10-14T08:24:03.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "vector2.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\vector2.h",
               "RelativeDocumentMoniker": "Mario\\vector2.h",
@@ -174,11 +211,12 @@
               "RelativeToolTip": "Mario\\vector2.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAADgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T04:06:33.505Z"
+              "WhenOpened": "2024-10-14T04:06:33.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "main_menu.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\main_menu.h",
               "RelativeDocumentMoniker": "Mario\\main_menu.h",
@@ -191,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "scene.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene.h",
               "RelativeDocumentMoniker": "Mario\\scene.h",
@@ -199,12 +237,11 @@
               "RelativeToolTip": "Mario\\scene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T01:28:14.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T01:28:14.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "camera.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\camera.h",
               "RelativeDocumentMoniker": "Mario\\camera.h",
@@ -212,12 +249,11 @@
               "RelativeToolTip": "Mario\\camera.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAwwBgAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T01:26:00.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T01:26:00.314Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "platform.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\platform.h",
               "RelativeDocumentMoniker": "Mario\\platform.h",
@@ -235,45 +271,46 @@
               "RelativeDocumentMoniker": "Mario\\util.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\util.h",
               "RelativeToolTip": "Mario\\util.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAsAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAzwF4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-13T12:44:56.692Z"
+              "WhenOpened": "2024-10-13T12:44:56.692Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "mario_child.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\mario_child.h",
               "RelativeDocumentMoniker": "Mario\\mario_child.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\mario_child.h",
               "RelativeToolTip": "Mario\\mario_child.h",
-              "ViewState": "AQIAAOIAAAAAAAAAAAAowOUAAAAEAAAA",
+              "ViewState": "AQIAACMBAAAAAAAAAAAAALcAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-13T08:38:08.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "scene_manager.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene_manager.h",
               "RelativeDocumentMoniker": "Mario\\scene_manager.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\scene_manager.h",
               "RelativeToolTip": "Mario\\scene_manager.h",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAADcAAAACAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADcAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-13T03:05:06.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "game_scene.h",
               "DocumentMoniker": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_scene.h",
               "RelativeDocumentMoniker": "Mario\\game_scene.h",
               "ToolTip": "C:\\Users\\32098\\Desktop\\Mario\\Mario\\Mario\\game_scene.h",
               "RelativeToolTip": "Mario\\game_scene.h",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAwwHMAAAADAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAuwG8AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-13T03:00:07.097Z",
               "EditorCaption": ""
